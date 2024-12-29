@@ -1,0 +1,120 @@
+/* General Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #343a40 !important;
+}
+
+.navbar .nav-link {
+  color: #ffffff !important;
+}
+
+.navbar .nav-link:hover {
+  color: #ffc107 !important;
+}
+
+.badge {
+  padding: 5px 10px;
+  border-radius: 50%;
+}
+
+/* Product Card */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  height: 250px;
+  object-fit: cover;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.card-text {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.card-body .btn {
+  margin-top: 10px;
+}
+
+.card-body .btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.card-body .btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}
+
+/* Buttons */
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+
+/* Cart Table */
+.table th,
+.table td {
+  vertical-align: middle;
+}
+
+.table img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card img {
+    height: 200px;
+  }
+
+  .navbar .navbar-brand {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .card img {
+    height: 150px;
+  }
+
+  .badge {
+    font-size: 0.7rem;
+  }
+}
