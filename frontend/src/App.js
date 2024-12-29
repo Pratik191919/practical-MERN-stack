@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import CreateProductPage from './pages/CreateProductPage';
 import CartPage from './pages/CartPage';
-
+import PaymentPage from './pages/PaymentPage';
+import PaymentSuccess from './pages/PaymentSuccess';
+import PaymentFail from './pages/PaymentFail';
 const App = () => {
   const [cartItems, setCartItems] = useState([]);
 
@@ -51,6 +52,9 @@ const App = () => {
             />
           }
         />
+        <Route path="/payment-success" element={<PaymentSuccess />} />
+        <Route path="/payment-fail" element={<PaymentFail />} />
+           <Route path="/payment" element={<PaymentPage />} />
       </Routes>
     </Router>
   );

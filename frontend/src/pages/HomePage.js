@@ -59,16 +59,21 @@ const HomePage = ({ addToCart, cartItems }) => {
 
   return (
     <div>
-      {/* Navbar with search and sort */}
-      <Navbar
-        cartCount={cartItems.reduce((sum, item) => sum + item.quantity, 0)} 
-        onSearch={handleSearch}
-        onSort={handleSort}
-      />
-      <div className="container my-4">
-        {noProductsFound ? (
+    {/* Navbar with search and sort */}
+    <Navbar
+      cartCount={cartItems.reduce((sum, item) => sum + item.quantity, 0)}
+      onSearch={handleSearch}
+      onSort={handleSort}
+    />
+    <div className="container my-4">
+      {noProductsFound ? (
+        <div className="d-flex justify-content-center align-items-center" style={{ height: '300px' }}>
+          <h3>No products found</h3>
+        </div>
+      ) : (
+        filteredProducts.length === 0 ? (
           <div className="d-flex justify-content-center align-items-center" style={{ height: '300px' }}>
-            <h3>No products found</h3>
+            <h3>Loading products...</h3>
           </div>
         ) : (
           <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
@@ -78,9 +83,10 @@ const HomePage = ({ addToCart, cartItems }) => {
               </div>
             ))}
           </div>
-        )}
-      </div>
+        )
+      )}
     </div>
+  </div>
   );
 };
 

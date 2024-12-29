@@ -1,14 +1,15 @@
+
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useHistory for navigation
+import { useNavigate } from 'react-router-dom';
 
 const CartPage = ({ cartItems, updateQuantity, removeItem }) => {
-  const navigate = useNavigate(); // Initialize useHistory
+  const navigate = useNavigate();
 
   const calculateTotal = () =>
     cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
 
-  const handleGoToHomePage = () => {
-    navigate('/'); // Navigate to the home page
+  const handleCheckout = () => {
+    navigate('/payment', { state: { cartItems, total: calculateTotal() } }); // Pass cart details via state
   };
 
   return (
@@ -66,8 +67,8 @@ const CartPage = ({ cartItems, updateQuantity, removeItem }) => {
         </table>
       )}
       <h3>Total: ₹{calculateTotal()}</h3>
-      <button className="btn btn-primary" onClick={handleGoToHomePage}>
-        Go to Home Page
+      <button className="btn btn-success" onClick={handleCheckout}>
+        Checkout
       </button>
     </div>
   );
